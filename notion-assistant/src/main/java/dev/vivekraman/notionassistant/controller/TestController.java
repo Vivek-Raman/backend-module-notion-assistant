@@ -4,7 +4,11 @@ import dev.vivekraman.notionassistant.config.Constants;
 import dev.vivekraman.monolith.annotation.MonolithController;
 import dev.vivekraman.monolith.model.Response;
 import lombok.RequiredArgsConstructor;
-import org.springframework.web.bind.annotation.GetMapping;
+
+import java.util.LinkedHashMap;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+
 import reactor.core.publisher.Mono;
 import reactor.core.scheduler.Scheduler;
 
@@ -13,9 +17,9 @@ import reactor.core.scheduler.Scheduler;
 public class TestController {
   private final Scheduler scheduler;
 
-  @GetMapping
-  public Mono<Response<Boolean>> test() {
-    return Mono.just(Response.of(true))
+  @PostMapping
+  public Mono<Response<LinkedHashMap<String, Object>>> echo(@RequestBody LinkedHashMap<String, Object> body) {
+    return Mono.just(Response.of(body))
         .subscribeOn(scheduler);
   }
 }
