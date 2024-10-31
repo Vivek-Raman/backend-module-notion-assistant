@@ -5,6 +5,6 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class NotionAPI {
-  @Value("${notion-assistant.api-key}")
+  @Value("${notion-assistant.api-key:}")
   private String apiKey;
 }
