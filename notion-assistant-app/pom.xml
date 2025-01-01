@@ -6,7 +6,7 @@
   <parent>
     <groupId>dev.vivekraman</groupId>
     <artifactId>backend-module-notion-assistant</artifactId>
-    <version>1.0-rc2</version>
+    <version>1.0-rc3</version>
   </parent>
 
   <artifactId>notion-assistant-app</artifactId>
@@ -48,17 +48,25 @@
       <artifactId>spring-boot-starter-webflux</artifactId>
     </dependency>
     <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-security</artifactId>
+    </dependency>
+    <dependency>
       <groupId>org.springdoc</groupId>
       <artifactId>springdoc-openapi-starter-webflux-ui</artifactId>
     </dependency>
     <dependency>
       <groupId>io.r2dbc</groupId>
-      <artifactId>r2dbc-h2</artifactId>
-      <version>1.0.0.RELEASE</version>
+      <artifactId>r2dbc-postgresql</artifactId>
+      <version>0.8.13.RELEASE</version>
     </dependency>
     <dependency>
       <groupId>dev.vivekraman</groupId>
       <artifactId>monolith-model</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>dev.vivekraman</groupId>
+      <artifactId>monolith-auth</artifactId>
     </dependency>
     <dependency>
       <groupId>dev.vivekraman</groupId>

@@ -44,6 +44,11 @@ public class NotionAPI {
             ),
             "Amount", Map.of(
               "number", expense.getAmount()
+            ),
+            "Tags", Map.of(
+              "multi_select", List.of(
+                Map.of("name", "Other")
+              )
             )
           )
         )).retrieve()
