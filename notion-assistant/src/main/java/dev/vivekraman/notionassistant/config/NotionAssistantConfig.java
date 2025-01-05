@@ -1,11 +1,13 @@
 package dev.vivekraman.notionassistant.config;
 
 import org.springdoc.core.models.GroupedOpenApi;
+import org.springframework.boot.context.properties.ConfigurationPropertiesScan;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.reactive.function.client.WebClient;
 
 @Configuration
+@ConfigurationPropertiesScan(basePackages = "dev.vivekraman.notionassistant.config")
 public class NotionAssistantConfig {
   @Bean
   public GroupedOpenApi notionAssistantApiGroup() {
